@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array de imagenes con boton</title>
+  <script>
+    var images = [
+      "fifa2.jpg",
+      "fifa3.jpg",
+      "fifa4.jpg",
+      "fifa5.jpg"
+    ];
+
+    var currentIndex = 0;
+
+    function cambiarImagen() {
+      var image = document.getElementById("image");
+      currentIndex = (currentIndex + 1) % images.length;
+      image.src = images[currentIndex];
+    }
+    function regresarImagen() {
+      var image = document.getElementById("image");
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      image.src = images[currentIndex];
+    }
+  </script>
+</head>
+<body>
+  <h1>Array de imágenes con botón</h1>
+  <img id="image" src="fifa.jpg" alt="Imagen">
+  <br>
+  <button onclick="cambiarImagen()">Cambiar imagen</button>
+  <button onclick="regresarImagen()">regresar imagen</button>
+</body>
+</html>
